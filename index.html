@@ -3,140 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Palette Studio</title>
+  <title>Privacy Policy - Convert Webpage to Figma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0b10;
-      --surface: #13131b;
-      --surface-2: #1a1a24;
-      --text: #ececf1;
-      --muted: #9a9aa8;
-      --accent: #a78bfa;
-      --border: #26263a;
-    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Sora', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 25px;
     }
-    header {
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    body::before {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #7D60FD, #06b6d4);
+      filter: blur(120px);
+      top: -150px;
+      right: -150px;
+      opacity: 0.35;
+      animation: float 8s ease-in-out infinite;
+      z-index: -1;
     }
-    .brand { font-size: 1.15rem; font-weight: 700; color: var(--text); }
-    .brand span { color: var(--accent); }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
+    body::after {
+      content: '';
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      filter: blur(120px);
+      bottom: -150px;
+      left: -150px;
+      opacity: 0.25;
+      animation: float2 10s ease-in-out infinite;
+      z-index: -1;
     }
-    h1 { font-size: 2rem; margin-bottom: 6px; }
-    .updated { color: var(--muted); font-size: .9rem; margin-bottom: 28px; }
-    .lead { color: var(--muted); margin-bottom: 32px; }
-    h2 {
-      font-size: 1.25rem;
-      margin: 36px 0 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(25px); }
+      100% { transform: translateY(0px); }
     }
-    p { color: var(--text); margin-bottom: 14px; }
-    ul { margin: 0 0 14px 22px; }
-    li { margin-bottom: 6px; color: var(--text); }
-    code {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1px 6px;
-      font-size: .9em;
+    @keyframes float2 {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0px); }
     }
-    a { color: var(--accent); }
-    .callout {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 16px 18px;
-      margin: 20px 0;
+    .container {
+      max-width: 900px;
+      width: 100%;
     }
-    .btn {
+    .card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 50px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 40px rgba(125, 96, 253, 0.12), 0 0 90px rgba(168, 85, 247, 0.08);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .badge {
       display: inline-block;
-      background: var(--accent);
-      color: #0b0b10;
-      text-decoration: none;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #7D60FD, #7c3aed);
+      border-radius: 999px;
+      font-size: 13px;
       font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-top: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(125, 96, 253, 0.35);
     }
-    .btn:hover { filter: brightness(1.1); }
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #a78bfa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      color: #94a3b8;
+      font-size: 16px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    .hero { text-align: center; }
+    .section {
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: 0.35s ease;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      border-color: #7D60FD;
+      box-shadow: 0 12px 40px rgba(125, 96, 253, 0.08);
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    p {
+      color: #cbd5e1;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+    p a {
+      color: #a78bfa;
+      text-decoration: underline;
+    }
+    ul {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .email-box {
+      margin-top: 18px;
+      display: inline-block;
+      padding: 14px 22px;
+      background: rgba(125, 96, 253, 0.12);
+      border: 1px solid rgba(125, 96, 253, 0.3);
+      border-radius: 14px;
+      color: #a78bfa;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+    .email-box:hover {
+      background: rgba(125, 96, 253, 0.22);
+      transform: scale(1.03);
+    }
     footer {
-      border-top: 1px solid var(--border);
-      padding: 20px 24px;
+      margin-top: 40px;
       text-align: center;
-      color: var(--muted);
-      font-size: .9rem;
-      background: var(--surface);
+      color: #64748b;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .card { padding: 30px; }
+      h1 { font-size: 28px; }
+      .section { padding: 22px; }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="card">
+      <div class="hero">
+        <div class="badge">Convert Webpage to Figma</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Convert Webpage to Figma — Chrome Extension &amp; Figma Plugin &bull; Last updated: 16 September 2026</p>
+        <p class="subtitle" style="margin-top:-20px;">Your privacy matters to us. Convert Webpage to Figma is committed to protecting your personal information and maintaining transparency about how data is collected and used.</p>
+      </div>
 
-  <header>
-    <div class="brand">Palette<span>Studio</span> &mdash; Color Palette Maker</div>
-  </header>
+      <div class="section">
+        <h2>What We Collect</h2>
+        <ul>
+          <li><strong>Google account details</strong> — when you sign in with Google, we receive your name and email address. These are used to identify your account and are stored locally in the extension on your device.</li>
+          <li><strong>Device and IP address</strong> — a device identifier and your public IP address are detected and sent to our license server together with your account email. This is used to run the free trial and manage access (see "Why we collect it").</li>
+          <li><strong>License records</strong> — first use date, last use date, plan status, login activity, and a count of how many times the extension was used to perform a capture.</li>
+          <li><strong>Support messages</strong> — if you contact us, your message is sent through the channel you choose (WhatsApp or Slack) and we receive it so we can follow up.</li>
+        </ul>
+        <p>We do <strong>not</strong> collect browsing history, page content, analytics, passwords, or payment card details.</p>
+      </div>
 
-  <main>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 12 August 2026</p>
+      <div class="section">
+        <h2>Why We Collect It</h2>
+        <ul>
+          <li>To securely sign you in and identify your account.</li>
+          <li>To operate the <strong>free trial</strong> per device and per internet connection, and to unlock lifetime access after activation.</li>
+          <li>To prevent abuse, block unauthorized usage, and provide support.</li>
+        </ul>
+        <p>Payments are arranged directly by email and processed outside the extension — we never see or store card or banking details.</p>
+      </div>
 
-    <p class="lead">Your privacy matters to us. Palette Studio is committed to protecting your personal information and being transparent about what data is — and is not — collected.</p>
+      <div class="section">
+        <h2>Where Your Data Lives</h2>
+        <p>Sign-in details stay in your browser's extension storage on your device. License and access records (email, IP, device identifier, dates, plan status, capture count) are stored in a <strong>private, developer-controlled Cloudflare Worker</strong> database, transmitted over HTTPS. Only the developer can access it.</p>
+      </div>
 
-    <div class="callout">
-      <strong>In short:</strong> Palette Studio runs entirely inside your browser. We do <strong>not</strong> collect, store, transmit, or sell any of your data. No accounts, no analytics, no tracking.
+      <div class="section">
+        <h2>Third-Party Services</h2>
+        <p>To convert a webpage into a Figma design, the extension processes the page's HTML, CSS, fonts, and images locally in your browser. Certain resources may be retrieved through third-party services:</p>
+        <ul>
+          <li><strong>Google</strong> (accounts.google.com) — used for sign-in. Google shares your name and email address with us when you authorize it.</li>
+          <li><strong>CORS proxy services</strong> (corsproxy.io, api.allorigins.win) — used to fetch remote images and assets that websites do not allow to be loaded directly. The requested image/asset URL is transmitted to these services.</li>
+          <li><strong>Google Fonts</strong> (fonts.googleapis.com) — used to load web fonts used on the captured page.</li>
+          <li><strong>YouTube</strong> (img.youtube.com) — used to load video thumbnails for embedded videos.</li>
+          <li><strong>WhatsApp</strong> (wa.me) — used only when you choose to contact us.</li>
+          <li><strong>Slack</strong> (hooks.slack.com) — used to receive support and access-request messages you choose to send us so we can follow up.</li>
+        </ul>
+        <p>These services only receive the data necessary to complete your request (e.g., the asset URL). We never sell, rent, or share your personal information with third parties for advertising or marketing.</p>
+      </div>
+
+      <div class="section">
+        <h2>Conversion Stays Local</h2>
+        <p>All conversion work — reading the page's HTML, CSS, fonts, and images, and building the Figma design — happens entirely inside your browser. The page content itself is converted locally on your device and is never uploaded to our servers.</p>
+      </div>
+
+      <div class="section">
+        <h2>Google User Data — Limited Use</h2>
+        <p>Convert Webpage to Figma's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+      </div>
+
+      <div class="section">
+        <h2>Retention &amp; Your Rights</h2>
+        <p>License records are kept for as long as they are needed to operate your trial or lifetime access. You can request a copy of your data or ask for it to be deleted at any time by emailing us; deletion requests are honoured within 7 days. Signing out removes your Google details from the extension on your device.</p>
+      </div>
+
+      <div class="section">
+        <h2>Children</h2>
+        <p>Convert Webpage to Figma is a professional design tool and is not directed at children under 13. We do not knowingly collect information from children.</p>
+      </div>
+
+      <div class="section">
+        <h2>Changes &amp; Contact</h2>
+        <p>If this policy changes, the update will be posted on this page with a new date. Questions, data requests, or support:</p>
+        <a class="email-box" href="mailto:markaglobals@gmail.com">markaglobals@gmail.com</a>
+      </div>
+
+      <footer>&copy; 2026 Convert Webpage to Figma &bull; All Rights Reserved</footer>
     </div>
-
-    <h2>What We Collect</h2>
-    <p>Nothing. Palette Studio collects no personal information, no browsing history, no page content, no device identifiers, and no usage statistics.</p>
-    <p>Your saved palettes and likes are stored <strong>only in your browser's local storage</strong> on your device and never leave it.</p>
-
-    <h2>What We Don't Collect</h2>
-    <ul>
-      <li>No personal information (name, email, location).</li>
-      <li>No browsing history or visited website content.</li>
-      <li>No analytics, tracking cookies, or advertising identifiers.</li>
-      <li>No keystrokes, screenshots, or clipboard data.</li>
-    </ul>
-
-    <h2>Why We Collect Nothing</h2>
-    <p>Palette Studio is designed to be a fully offline, local tool. Everything — palette generation, image-to-palette extraction, contrast checking, gradients, and color picking — is computed inside your browser using your device's processing power. The extension makes <strong>no network requests</strong>.</p>
-
-    <h2>Where Your Data Lives</h2>
-    <p>The only data involved is what you choose to create and save (for example, liked palettes). This data stays in your browser's local storage on your device. Clearing your browser data or uninstalling the extension removes it permanently.</p>
-
-    <h2>Third-Party Services</h2>
-    <p>None. Palette Studio does not use any third-party services, APIs, fonts, or analytics providers. Nothing is ever sent to an external server.</p>
-
-    <h2>Children</h2>
-    <p>Palette Studio is a general-purpose design tool and does not knowingly collect information from anyone, including children under 13. Since we collect nothing at all, there is no data of a child's that we could hold.</p>
-
-    <h2>Your Rights</h2>
-    <p>Because we hold no personal data, there is nothing to request, correct, or delete on our side. To remove everything, simply clear your browser data or uninstall the extension.</p>
-
-    <h2>Changes &amp; Contact</h2>
-    <p>If this policy changes, the update will be posted on this page with a new date. If you have any questions about this policy, feel free to contact us:</p>
-    <a class="btn" href="mailto:uixiouk@gmail.com">Contact Us</a>
-  </main>
-
-  <footer>
-    &copy; 2026 Palette Studio &mdash; Color Palette Maker &bull; All Rights Reserved
-  </footer>
-
+  </div>
 </body>
 </html>
